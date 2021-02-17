@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import styles from '../css/EditButton.module.css'
+import { ClothesContext } from '../contexts/ClothesContext'
 
-const EditButton = ({item, editMethod}) => {
+const EditButton = ({ item }) => {
+
+  const { dispatch } = useContext(ClothesContext);
 
   const [showEditForm, setShowEditForm] = useState(false);
   const [editedItem, setEditedItem] = useState({
     color: '',
     brand: '',
-    description: '',
-    id: item.id
+    description: ''
   });
 
   const toggleEditForm = () => {
@@ -37,7 +39,14 @@ const EditButton = ({item, editMethod}) => {
       editedItem.brand = item.brand
     }
     console.log(editedItem);
-    editMethod(editedItem);
+    dispatch({type: 'EDIT_ITEM', editedItem: {
+        type: item.type,
+        id: item.id,
+        color: editedItem.color,
+        brand: editedItem.brand,
+        description: editedItem.description
+    }
+    });
     toggleEditForm();
   }
 
