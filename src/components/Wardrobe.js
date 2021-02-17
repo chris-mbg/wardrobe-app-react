@@ -1,16 +1,13 @@
 import Shelf from './Shelf'
-import { ShoesContext } from '../contexts/ShoesContext'
-import { ShirtsContext } from '../contexts/ShirtsContext'
-import { TrousersContext } from '../contexts/TrousersContext'
-import { TShirtsContext } from '../contexts/TShirtsContext'
+
 import { useState, useContext } from 'react'
 import styles from '../css/Wardrobe.module.css'
 
 const Wardrobe = () => {
-  const { shoes, deleteShoes, editShoes } = useContext(ShoesContext);
+ /*  const { shoes, deleteShoes, editShoes } = useContext(ShoesContext);
   const { shirts, deleteShirt, editShirt } = useContext(ShirtsContext);
   const { trousers, deleteTrousers, editTrousers } = useContext(TrousersContext)
-  const { tShirts, deleteTShirt, editTShirt } = useContext(TShirtsContext);
+  const { tShirts, deleteTShirt, editTShirt } = useContext(TShirtsContext); */
 
   const [itemToShow, setItemToShow] = useState('tShirt');
 
