@@ -26,5 +26,3 @@ const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true}) => {
 }
 
 export default Shelf;
-
-/* editMethod={editMethod} */

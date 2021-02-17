@@ -4,7 +4,7 @@ export const clothesReducer = (state,action) => {
     case 'ADD_ITEM' :
       return [action.newItem, ...state];
     case 'REMOVE_ITEM':
-      return state.filter(item => item.id !== action.item.id);
+      return state.filter(item => item.id !== action.id);
     case 'EDIT_ITEM':
       const index = state.findIndex(item => item.id === action.editedItem.id);
       if (index < 0 || index > state.length -1) {
