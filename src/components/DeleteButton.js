@@ -1,8 +1,12 @@
-const DeleteButton = ({id, deleteMethod}) => {
+import { useContext } from 'react'
+import { ClothesContext } from '../contexts/ClothesContext'
+
+const DeleteButton = ({ id }) => {
+  const { dispatch } = useContext(ClothesContext);
+
   return (
     <div className="item-buttons delete-button">
-      {/* <button onClick={() => editMethod(item.id)}>Edit</button> */}
-      <button onClick={() => deleteMethod(id)}>X</button>
+      <button onClick={() => dispatch( {type: 'REMOVE_ITEM', id: id} )}>X</button>
     </div>
   );
 }

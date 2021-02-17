@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { useHistory } from 'react-router-dom'
+import { ClothesContext } from '../contexts/ClothesContext'
 import styles from '../css/ItemForm.module.css'
 
-const ItemForm = ({typeOfItem, addItem}) => {
+const ItemForm = ({ typeOfItem }) => {
+  const { dispatch } = useContext(ClothesContext);
   const [description, setDescription] = useState('');
   const [color, setColor] = useState('');
   const [brand, setBrand] = useState('');
@@ -30,12 +32,13 @@ const ItemForm = ({typeOfItem, addItem}) => {
       }, 3000)
     } else {
       const newItem = {
+        type: typeOfItem,
         description,
         color,
         brand,
         id: uuidv4()
       }
-      addItem(newItem);
+      dispatch({type: 'ADD_ITEM', newItem});
       history.push('/');
     }
   }

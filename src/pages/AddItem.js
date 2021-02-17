@@ -1,15 +1,9 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import ItemForm from '../components/ItemForm'
-import { ShirtsContext } from '../contexts/ShirtsContext'
-import { ShoesContext } from '../contexts/ShoesContext'
-import { TrousersContext } from '../contexts/TrousersContext'
 import styles from '../css/AddItem.module.css'
 
 const AddItem = () => {
   const [typeOfItem, setTypeOfItem] = useState('');
-  const { addShirt } = useContext(ShirtsContext);
-  const { addShoes } = useContext(ShoesContext);
-  const { addTrouser } = useContext(TrousersContext);
 
   const handleTypeChange = e => {
     setTypeOfItem(e.target.value);
@@ -21,16 +15,28 @@ const AddItem = () => {
       <h2>Add a new item to your wardrobe here!</h2>
       <select onChange={handleTypeChange}>
         <option value="">Type of item</option>
+        <option value="tShirt">T-Shirt</option>
         <option value="shirt">Shirt</option>
+        <option value="sweater">Sweater</option>
         <option value="trousers">Trousers</option>
+        <option value="shorts">Shorts</option>
+        <option value="jacket">Jacket</option>
         <option value="shoes">Shoes</option>
+        <option value="accessory">Accessory</option>
       </select>
       {(typeOfItem === '' && <div className={styles.feedback}>You must choose a type!</div>)}
-      {(typeOfItem === 'shirt' && <ItemForm typeOfItem={typeOfItem} addItem={addShirt} />)}
-      {(typeOfItem === 'trousers' && <ItemForm typeOfItem={typeOfItem} addItem={addTrouser} />)}
-      {(typeOfItem === 'shoes' && <ItemForm typeOfItem={typeOfItem} addItem={addShoes} />)}
+      {(typeOfItem === 'tShirt' && <ItemForm typeOfItem={typeOfItem} />)}
+      {(typeOfItem === 'shirt' && <ItemForm typeOfItem={typeOfItem} />)}
+      {(typeOfItem === 'sweater' && <ItemForm typeOfItem={typeOfItem} />)}
+      {(typeOfItem === 'trousers' && <ItemForm typeOfItem={typeOfItem} />)}
+      {(typeOfItem === 'shorts' && <ItemForm typeOfItem={typeOfItem} />)}
+      {(typeOfItem === 'jacket' && <ItemForm typeOfItem={typeOfItem} />)}
+      {(typeOfItem === 'shoes' && <ItemForm typeOfItem={typeOfItem} />)}
+      {(typeOfItem === 'accessory' && <ItemForm typeOfItem={typeOfItem} />)}
     </div>
   );
 }
 
 export default AddItem;
+
+/* 'shirt', 'tShirt', 'sweater', 'trouser', 'shorts', 'jacket', 'accessory'/'accessories'  */

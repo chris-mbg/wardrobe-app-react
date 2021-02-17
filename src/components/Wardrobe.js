@@ -1,16 +1,20 @@
 import Shelf from './Shelf'
-import { ShoesContext } from '../contexts/ShoesContext'
-import { ShirtsContext } from '../contexts/ShirtsContext'
-import { TrousersContext } from '../contexts/TrousersContext'
-import { TShirtsContext } from '../contexts/TShirtsContext'
+import { ClothesContext } from '../contexts/ClothesContext'
 import { useState, useContext } from 'react'
 import styles from '../css/Wardrobe.module.css'
 
 const Wardrobe = () => {
-  const { shoes, deleteShoes, editShoes } = useContext(ShoesContext);
-  const { shirts, deleteShirt, editShirt } = useContext(ShirtsContext);
-  const { trousers, deleteTrousers, editTrousers } = useContext(TrousersContext)
-  const { tShirts, deleteTShirt, editTShirt } = useContext(TShirtsContext);
+  const { clothes } = useContext(ClothesContext);
+  const tShirts = clothes.filter(item => item.type === 'tShirt');
+  const shirts = clothes.filter(item => item.type === 'shirt');
+  const sweaters = clothes.filter(item => item.type === 'sweater');
+  const trousers = clothes.filter(item => item.type === 'trousers');
+  const shorts = clothes.filter(item => item.type === 'shorts');
+  const jackets = clothes.filter(item => item.type === 'jacket');
+  const shoes = clothes.filter(item => item.type === 'shoes');
+  const accessories = clothes.filter(item => item.type === 'accessory');
+
+  // 'shirt', 'tShirt', 'sweater', 'trouser', 'shorts', 'jacket', 'accessiories'
 
   const [itemToShow, setItemToShow] = useState('tShirt');
 
@@ -31,11 +35,11 @@ const Wardrobe = () => {
           <div className={`${styles.tab}  ${itemToShow === 'trousers' ? styles.active : ""}`} onClick={() => setItemToShow('trousers')}>
             <img src="assets/icons/Jeans-icon.png" alt="Jeans icon" />
           </div>
-          <div className={`${styles.tab} ${itemToShow === 'shoes' ? styles.active : ""}`} onClick={() => setItemToShow('shoes')}>
-            <img src="assets/icons/Shoes-icon.png" alt="shoes icon" />
-          </div>
           <div className={`${styles.tab}  ${itemToShow === 'jacket' ? styles.active : ""}`} onClick={() => setItemToShow('jacket')}>
             <img src="assets/icons/Jacket-icon.png" alt="jacket icon" />
+          </div>
+          <div className={`${styles.tab} ${itemToShow === 'shoes' ? styles.active : ""}`} onClick={() => setItemToShow('shoes')}>
+            <img src="assets/icons/Shoes-icon.png" alt="shoes icon" />
           </div>
           <div className={`${styles.tab} ${styles.access} ${itemToShow === 'accessories' ? styles.active : ""}`} onClick={() => setItemToShow('accessories')}>
             <img src="assets/icons/Clothing-Hat-icon.png" alt="hat icon" />
@@ -44,16 +48,25 @@ const Wardrobe = () => {
           </div>
         </div>
         {itemToShow === 'tShirt' && <div className={`${styles.shelfContainer}`}>
-          <Shelf itemList={tShirts} deleteMethod={deleteTShirt} editMethod={editTShirt}/>
+          <Shelf itemList={tShirts} />
         </div>}
         {itemToShow === 'shirt' && <div className={`${styles.shelfContainer}`}>
-          <Shelf itemList={shirts} deleteMethod={deleteShirt} editMethod={editShirt}/>
+          <Shelf itemList={shirts} />
+        </div>}
+        {itemToShow === 'sweater' && <div className={`${styles.shelfContainer}`}>
+          <Shelf itemList={sweaters} />
         </div>}
         {itemToShow === 'trousers' && <div className={`${styles.shelfContainer}`}>
-          <Shelf itemList={trousers} deleteMethod={deleteTrousers} editMethod={editTrousers}/>
+          <Shelf itemList={trousers} />
+        </div>}
+        {itemToShow === 'jacket' && <div className={`${styles.shelfContainer}`}>
+          <Shelf itemList={jackets} />
         </div>}
         {itemToShow === 'shoes' && <div className={`${styles.shelfContainer}`}>
-          <Shelf itemList={shoes} deleteMethod={deleteShoes} editMethod={editShoes} />
+          <Shelf itemList={shoes} />
+        </div>}
+        {itemToShow === 'accessories' && <div className={`${styles.shelfContainer}`}>
+          <Shelf itemList={accessories} />
         </div>}
       </div>
     </div>
