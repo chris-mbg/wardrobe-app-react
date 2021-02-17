@@ -12,7 +12,7 @@ const Wardrobe = () => {
   const shorts = clothes.filter(item => item.type === 'shorts');
   const jackets = clothes.filter(item => item.type === 'jacket');
   const shoes = clothes.filter(item => item.type === 'shoes');
-  const accessiories = clothes.filter(item => item.type === 'accessiories');
+  const accessories = clothes.filter(item => item.type === 'accessory');
 
   // 'shirt', 'tShirt', 'sweater', 'trouser', 'shorts', 'jacket', 'accessiories'
 
@@ -65,8 +65,8 @@ const Wardrobe = () => {
         {itemToShow === 'shoes' && <div className={`${styles.shelfContainer}`}>
           <Shelf itemList={shoes} />
         </div>}
-        {itemToShow === 'accessiories' && <div className={`${styles.shelfContainer}`}>
-          <Shelf itemList={accessiories} />
+        {itemToShow === 'accessories' && <div className={`${styles.shelfContainer}`}>
+          <Shelf itemList={accessories} />
         </div>}
       </div>
     </div>

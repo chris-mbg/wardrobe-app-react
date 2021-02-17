@@ -108,14 +108,14 @@ const ClothesContextProvider = (props) => {
           id: uuidv4()
         },
         {
-          type: 'accessiories',
+          type: 'accessory',
           color: 'Black',
-          brand: '',
+          brand: 'Unknown',
           description: 'Knitted scarf',
           id: uuidv4()
         },
         {
-          type: 'accessiories',
+          type: 'accessory',
           color: 'Grey',
           brand: 'Hestra',
           description: 'Mittens',
@@ -137,4 +137,4 @@ const ClothesContextProvider = (props) => {
 
 export default ClothesContextProvider
 
-// types: 'shirt', 'tShirt', 'sweater', 'trousers', 'shorts', 'jacket', 'accessiories'
+// types: 'shirt', 'tShirt', 'sweater', 'trousers', 'shorts', 'jacket', 'accessories'
