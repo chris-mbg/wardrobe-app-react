@@ -14,9 +14,24 @@ const OutfitPicker = () => {
   const shoes = clothes.filter(item => item.type === 'shoes');
   const accessories = clothes.filter(item => item.type === 'accessory');
 
-  /* const {shoes} = useContext(ShoesContext);
-  const {shirts} = useContext(ShirtsContext);
-  const {trousers} = useContext(TrousersContext); */
+  const [outfitItems, setOutfitItems] = useState([]);
+
+  const pickNewOutfit = (e) => {
+    e.preventDefault();
+    console.log(e.target)
+  }
+
+  const handleChange = e => {
+    console.log(e.target.value)
+    const index = outfitItems.indexOf(e.target.value);
+    if (index !== -1) {
+      setOutfitItems(outfitItems.filter(item => item !== e.target.value))
+    } else {
+      setOutfitItems(prevState => [e.target.value, ...prevState]);
+    }
+  }
+
+  useEffect( () => console.log(outfitItems), [outfitItems]);
 
   /* const getRandomItem = (itemList) => {
     const randomItem =
@@ -36,29 +51,27 @@ const OutfitPicker = () => {
 
   const pickNewOutfit = () => {
     setRandomOutfit(getRandomOutfit())
-  }
-
-  useEffect(()=> console.log(randomOutfit), [randomOutfit]) */
+  } */
 
   return (
     <div className={styles.outfitContainer}>
       <p>What do you want to wear today?</p>
-      <form>
-        <input type="checkbox" id="tShirt" name="tShirt" value="tShirt" />
-        <label for="tShirt">T-Shirt</label><br />
-        <input type="checkbox" id="shirt" name="shirt" value="shirt" />
-        <label for="shirt">Shirt</label><br />
-        <input type="checkbox" id="sweater" name="sweater" value="sweater" />
-        <label for="sweater">Sweater</label><br />
-        <input type="checkbox" id="trousers" name="trousers" value="trousers" />
-        <label for="trousers">Trousers</label><br />
-        <input type="checkbox" id="shorts" name="shorts" value="shorts" />
-        <label for="shorts">Shorts</label><br />
-        <input type="checkbox" id="shoes" name="shoes" value="shoes" />
-        <label for="shoes">Shoes</label><br />
-        <input type="checkbox" id="accessory" name="accessory" value="accessory" />
-        <label for="accessory">Accessory</label><br />
-
+      <form onSubmit={pickNewOutfit}>
+        <input type="checkbox" id="tShirt" name="tShirt" value="tShirt" onChange={handleChange} />
+        <label htmlFor="tShirt">T-Shirt</label><br />
+        <input type="checkbox" id="shirt" name="shirt" value="shirt" onChange={handleChange}/>
+        <label htmlFor="shirt">Shirt</label><br />
+        <input type="checkbox" id="sweater" name="sweater" value="sweater" onChange={handleChange}/>
+        <label htmlFor="sweater">Sweater</label><br />
+        <input type="checkbox" id="trousers" name="trousers" value="trousers" onChange={handleChange} />
+        <label htmlFor="trousers">Trousers</label><br />
+        <input type="checkbox" id="shorts" name="shorts" value="shorts" onChange={handleChange} />
+        <label htmlFor="shorts">Shorts</label><br />
+        <input type="checkbox" id="shoes" name="shoes" value="shoes" onChange={handleChange} />
+        <label htmlFor="shoes">Shoes</label><br />
+        <input type="checkbox" id="accessory" name="accessory" value="accessory" onChange={handleChange} />
+        <label htmlFor="accessory">Accessory</label><br />
+        <button type="sumbit">Get new outfit!</button>
       </form>
         {/* {randomOutfit && <div><h2>Outfit for the day:</h2><Shelf itemList={randomOutfit} canBeDeleted={false} canBeEdited={false} /></div>}
       <div className={styles.outfitBtn}>
