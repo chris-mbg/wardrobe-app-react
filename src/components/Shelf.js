@@ -2,7 +2,7 @@ import DeleteButton from "./DeleteButton"
 import EditButton from './EditButton'
 import styles from '../css/Shelf.module.css'
 
-const Shelf = ({itemList, deleteMethod, editMethod, canBeDeleted = true, canBeEdited = true}) => {
+const Shelf = ({itemList, canBeDeleted = true, canBeEdited = true}) => {
   return (
     <div className={styles.shelf}>
       {itemList.map( item => (
@@ -13,10 +13,10 @@ const Shelf = ({itemList, deleteMethod, editMethod, canBeDeleted = true, canBeEd
           </div>
           <div className={styles.itemButtons}>
             <div className={styles.editButton}>
-            { canBeEdited && <EditButton item={item} editMethod={editMethod}/>}
+            { canBeEdited && <EditButton item={item} />}
             </div>
             <div className={styles.deleteButton}>
-            { canBeDeleted && <DeleteButton id={item.id} deleteMethod={deleteMethod}/>}
+            { canBeDeleted && <DeleteButton id={item.id} />}
             </div>
           </div>
         </div>

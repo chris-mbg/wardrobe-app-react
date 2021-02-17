@@ -1,4 +1,4 @@
-import { createContext, useReducer } from 'react'
+import { createContext, useReducer, useEffect } from 'react'
 import { clothesReducer } from '../reducers/clothesReducer'
 import { v4 as uuidv4} from 'uuid'
 
@@ -137,4 +137,4 @@ const ClothesContextProvider = (props) => {
 
 export default ClothesContextProvider
 
-// types: 'shirt', 'tShirt', 'sweater', 'trouser', 'shorts', 'jacket', 'accessiories'
+// types: 'shirt', 'tShirt', 'sweater', 'trousers', 'shorts', 'jacket', 'accessiories'
