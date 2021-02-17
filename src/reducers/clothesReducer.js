@@ -1,5 +1,6 @@
-export const reducer = (state,action) => {
-  switch(action.type) {
+
+export const clothesReducer = (state,action) => {
+  switch (action.type) {
     case 'ADD_ITEM' :
       return [action.newItem, ...state];
     case 'REMOVE_ITEM':
