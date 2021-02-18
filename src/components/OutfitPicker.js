@@ -28,7 +28,7 @@ const OutfitPicker = () => {
     }
   }
 
-  const getRandomItem = (itemList) => itemList[Math.floor(Math.random() * itemList.length)];
+  const getRandomItem = itemList => itemList[Math.floor(Math.random() * itemList.length)];
 
   const pickNewOutfit = e => {
     e.preventDefault();
