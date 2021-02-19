@@ -2,6 +2,7 @@ import { ClothesContext } from '../contexts/ClothesContext'
 import { useContext, useState, useEffect } from 'react'
 import Shelf from '../components/Shelf'
 import styles from '../css/OutfitPicker.module.css'
+import OutfitDisplay from './OutfitDisplay'
 
 const OutfitPicker = () => {
   const { clothes } = useContext(ClothesContext);
@@ -27,7 +28,7 @@ const OutfitPicker = () => {
     }
   }
 
-  const getRandomItem = (itemList) => itemList[Math.floor(Math.random() * itemList.length)];
+  const getRandomItem = itemList => itemList[Math.floor(Math.random() * itemList.length)];
 
   const pickNewOutfit = e => {
     e.preventDefault();
@@ -101,8 +102,7 @@ const OutfitPicker = () => {
         <button type="sumbit">Get new outfit!</button>
       </form>
       <div>
-        {randomOutfit && randomOutfit.map(item => (<p key={item.id}>{item.description}</p>))}
-        {/* Will have component here to display outfit! */}
+        {randomOutfit && <OutfitDisplay outfit={randomOutfit} />}
       </div>
     </div>
   );
