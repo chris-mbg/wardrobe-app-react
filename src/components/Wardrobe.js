@@ -35,6 +35,9 @@ const Wardrobe = () => {
           <div className={`${styles.tab}  ${itemToShow === 'trousers' ? styles.active : ""}`} onClick={() => setItemToShow('trousers')}>
             <img src="assets/icons/Jeans-icon.png" alt="Jeans icon" />
           </div>
+          <div className={`${styles.tab}  ${itemToShow === 'shorts' ? styles.active : ""}`} onClick={() => setItemToShow('shorts')}>
+            <img src="assets/icons/Clothing-shorts-icon.png" alt="Shorts icon" />
+          </div>
           <div className={`${styles.tab}  ${itemToShow === 'jacket' ? styles.active : ""}`} onClick={() => setItemToShow('jacket')}>
             <img src="assets/icons/Jacket-icon.png" alt="jacket icon" />
           </div>
@@ -58,6 +61,9 @@ const Wardrobe = () => {
         </div>}
         {itemToShow === 'trousers' && <div className={`${styles.shelfContainer}`}>
           <Shelf itemList={trousers} />
+        </div>}
+        {itemToShow === 'shorts' && <div className={`${styles.shelfContainer}`}>
+          <Shelf itemList={shorts} />
         </div>}
         {itemToShow === 'jacket' && <div className={`${styles.shelfContainer}`}>
           <Shelf itemList={jackets} />
