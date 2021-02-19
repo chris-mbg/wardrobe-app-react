@@ -102,7 +102,6 @@ const OutfitPicker = () => {
         <button type="sumbit">Get new outfit!</button>
       </form>
       <div>
-        {randomOutfit && randomOutfit.map(item => (<p key={item.id}>{item.description}</p>))}
         {randomOutfit && <OutfitDisplay outfit={randomOutfit} />}
       </div>
     </div>
