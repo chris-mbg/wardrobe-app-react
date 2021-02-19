@@ -71,33 +71,33 @@ const OutfitPicker = () => {
     <div className={styles.outfitContainer}>
       <p className={styles.lead}>What do you want to wear today?</p>
       <form onSubmit={pickNewOutfit}>
-        <label class={styles.checkboxContainer} htmlFor='tShirt'>T-shirt
+        <label className={styles.checkboxContainer} htmlFor='tShirt'>T-shirt
           <input type="checkbox" id="tShirt" name="tShirt" value="tShirt" onChange={handleChange} />
-          <span class={styles.checkmark}></span>
+          <span className={styles.checkmark}></span>
         </label>
-        <label class={styles.checkboxContainer} htmlFor='shirt'>Shirt
+        <label className={styles.checkboxContainer} htmlFor='shirt'>Shirt
           <input type="checkbox" id="shirt" name="shirt" value="shirt" onChange={handleChange} />
-          <span class={styles.checkmark}></span>
+          <span className={styles.checkmark}></span>
         </label>
-        <label class={styles.checkboxContainer} htmlFor='sweater'>Sweater
+        <label className={styles.checkboxContainer} htmlFor='sweater'>Sweater
           <input type="checkbox" id="sweater" name="sweater" value="sweater" onChange={handleChange} />
-          <span class={styles.checkmark}></span>
+          <span className={styles.checkmark}></span>
         </label>
-        <label class={styles.checkboxContainer} htmlFor='trousers'>Trousers
+        <label className={styles.checkboxContainer} htmlFor='trousers'>Trousers
           <input type="checkbox" id="trousers" name="trousers" value="trousers" onChange={handleChange} />
-          <span class={styles.checkmark}></span>
+          <span className={styles.checkmark}></span>
         </label>
-        <label class={styles.checkboxContainer} htmlFor='shorts'>Shorts
+        <label className={styles.checkboxContainer} htmlFor='shorts'>Shorts
           <input type="checkbox" id="shorts" name="shorts" value="shorts" onChange={handleChange} />
-          <span class={styles.checkmark}></span>
+          <span className={styles.checkmark}></span>
         </label>
-        <label class={styles.checkboxContainer} htmlFor='shoes'>Shoes
+        <label className={styles.checkboxContainer} htmlFor='shoes'>Shoes
           <input type="checkbox" id="shoes" name="shoes" value="shoes" onChange={handleChange} />
-          <span class={styles.checkmark}></span>
+          <span className={styles.checkmark}></span>
         </label>
-        <label class={styles.checkboxContainer} htmlFor='accessory'>Accessory
+        <label className={styles.checkboxContainer} htmlFor='accessory'>Accessory
           <input type="checkbox" id="accessory" name="accessory" value="accessory" onChange={handleChange} />
-          <span class={styles.checkmark}></span>
+          <span className={styles.checkmark}></span>
         </label>
         <button type="sumbit">Get new outfit!</button>
       </form>
