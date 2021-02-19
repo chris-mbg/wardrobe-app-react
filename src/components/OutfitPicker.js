@@ -65,8 +65,6 @@ const OutfitPicker = () => {
     setRandomOutfit([...someOutfit]);
   }
 
-  useEffect( () => console.log(outfitItems), [outfitItems]);
-
   return (
     <div className={styles.outfitContainer}>
       <p className={styles.lead}>What do you want to wear today?</p>
@@ -99,7 +97,9 @@ const OutfitPicker = () => {
           <input type="checkbox" id="accessory" name="accessory" value="accessory" onChange={handleChange} />
           <span className={styles.checkmark}></span>
         </label>
-        <button type="sumbit">Get new outfit!</button>
+        <div className={styles.btnContainer}>
+          <button type="sumbit">Get new outfit!</button>
+        </div>
       </form>
       <div>
         {randomOutfit && <OutfitDisplay outfit={randomOutfit} />}

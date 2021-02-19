@@ -5,6 +5,13 @@
   margin: 2rem 0.5rem;
   text-align: left;
 }
+.headText {
+  font-family: 'Noto Serif', serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
 .itemContainer {
   background-color: #d7d8da;
   border-radius: 5px;
@@ -39,6 +46,7 @@
 }
 
 @media only screen and (min-width: 600px) {
+
   .outfitDisplay {
     margin: 2rem auto;
     max-width: 600px;

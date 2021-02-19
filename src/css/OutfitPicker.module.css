@@ -1,19 +1,25 @@
 .outfitContainer {
   margin: 1rem auto;
-  text-align: center;
-}
-.outfitBtn {
-  text-align: center;
 }
 .lead {
-  /* font-style: italic; */
   font-size: 1.3rem;
   color: #7f8084;
+  text-align: center;
 }
-
+.outfitContainer form {
+  max-width: 400px;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .outfitContainer input, .outfitContainer label {
   font-size: 1.3rem;
 }
+.btnContainer {
+  grid-column: 1 / 3;
+  text-align: center;
+}
+
 .checkboxContainer {
   display: inline-block;
   position: relative;
@@ -37,8 +43,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 30px;
+  width: 30px;
   background-color: #afb2b7;
   border-radius: 5px;
   transition: all 0.3s ease-out;
@@ -55,8 +61,8 @@
   display: block;
 }
 .checkboxContainer .checkmark:after {
-  left: 9px;
-  top: 5px;
+  left: 11px;
+  top: 7px;
   width: 5px;
   height: 10px;
   border: solid white;
@@ -66,12 +72,17 @@
   transform: rotate(45deg);
 }
 
-/* .outfitContainer input[type='checkbox'] {
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  margin-right: 1rem;
-} */
+@media only screen and (min-width: 550px) {
+  
+  .outfitContainer form {
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .btnContainer {
+    grid-column: 1 / 4;
+  }
+}
 
 /* #262526 black
 #7f8084
