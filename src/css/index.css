@@ -47,9 +47,9 @@ button:hover{
   box-shadow: 10px 5px 20px 10px #7f8084;
 }
 
-@media only screen and (min-width:1000px) {
+@media only screen and (min-width:1140px) {
   .App {
-    max-width: 1400px;
+    max-width: 1100px;
     margin: 2rem auto;
   }
   button {

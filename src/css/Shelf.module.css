@@ -4,14 +4,12 @@
   padding: 0.5rem 0.2rem;
   margin: 0;
   color: #000;
-  /* border: 1px solid #262526 */
 }
 .wardrobeItem {
   background-color: #d7d8da;
   margin: 0.5rem;
   padding: 0.2rem;
   border-radius: 5px;
-
 }
 .itemContent {
   padding: 0 0.5rem;
@@ -25,11 +23,6 @@
   display: flex;
   justify-content: space-between;
 }
-/* .wardrobeItem p{
-  margin: 0.5rem;
-  padding: 0.2rem;
-  border-radius: 5px;
-} */
 .itemButtons {
   display: flex;
   justify-content: space-between;
@@ -52,6 +45,20 @@
 }
 .itemButtons .editButton {
   flex-basis: 80%;
+}
+@media only screen and (min-width: 767px){
+  .shelf {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+@media only screen and (min-width: 1140px){
+  .shelf {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
 }
 
 /* #262526 black
