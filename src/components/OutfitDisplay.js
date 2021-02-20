@@ -18,9 +18,9 @@ const OutfitDisplay = ({ outfit }) => {
                 <img src="assets/icons/Clothing-Hat-icon.png" alt="hat icon" />
                 <img src="assets/icons/Clothing-Scarf-icon.png" alt="scarf icon" />
               </div>}
+          {item.timestamp && <div></div>}
           <p>{item.description}</p>
           <p>{item.color}</p>
-
         </div>))}
     </div>
   );

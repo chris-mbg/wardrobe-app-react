@@ -1,6 +1,5 @@
 import { ClothesContext } from '../contexts/ClothesContext'
 import { useContext, useState, useEffect } from 'react'
-import Shelf from '../components/Shelf'
 import styles from '../css/OutfitPicker.module.css'
 import OutfitDisplay from './OutfitDisplay'
 
@@ -15,8 +14,27 @@ const OutfitPicker = () => {
   const shoes = clothes.filter(item => item.type === 'shoes');
   const accessories = clothes.filter(item => item.type === 'accessory');
 
+
+  const checkIfRandomOutfitNeedsUpdate = () => {
+      const localData = localStorage.getItem('randomOutfit');
+      if(localData) {
+        const localDataArray = JSON.parse(localData);
+        const now = new Date().getTime();
+        const arrayTime = localDataArray[localDataArray.length-1].timestamp
+        const diff = now - arrayTime
+        const millisecIn12H = 1000*60*60*12;
+        if(diff > millisecIn12H) {
+          return null
+        } else {
+          return localDataArray
+        }
+      } else {
+        return null
+      }
+  }
+
   const [outfitItems, setOutfitItems] = useState([]);
-  const [randomOutfit, setRandomOutfit] = useState(null);
+  const [randomOutfit, setRandomOutfit] = useState(checkIfRandomOutfitNeedsUpdate());
 
   const handleChange = e => {
     console.log(e.target.value)
@@ -32,8 +50,6 @@ const OutfitPicker = () => {
 
   const pickNewOutfit = e => {
     e.preventDefault();
-    console.log(e.target)
-
     const someOutfit = [];
 
     if (outfitItems.includes('tShirt')) {
@@ -60,10 +76,15 @@ const OutfitPicker = () => {
     if (outfitItems.includes('accessory')) {
       someOutfit.push(getRandomItem(accessories));
     }
-
     console.log(someOutfit);
-    setRandomOutfit([...someOutfit]);
+    setRandomOutfit([...someOutfit, {timestamp: new Date().getTime()}]);
   }
+
+  useEffect( () => {
+    if(randomOutfit) {
+      localStorage.setItem('randomOutfit', JSON.stringify(randomOutfit))
+    }
+  }, [randomOutfit]);
 
   return (
     <div className={styles.outfitContainer}>
