@@ -11,7 +11,7 @@ const AddItem = () => {
 
   return (
     <div className={styles.addItem}>
-      <h2>Add a new item <br /> to your wardrobe...</h2>
+      <h2>Add a new item to your wardrobe</h2>
       <select className={styles.select} onChange={handleTypeChange}>
         <option value="">Type of item</option>
         <option value="tShirt">T-shirt</option>
@@ -23,7 +23,7 @@ const AddItem = () => {
         <option value="shoes">Shoes</option>
         <option value="accessory">Accessory</option>
       </select>
-      {(typeOfItem === '' && <div className={styles.feedback}>You must choose a type!</div>)}
+      {(typeOfItem === '' && <div className={styles.feedback}><p>You must choose a type...</p></div>)}
       {(typeOfItem === 'tShirt' && <ItemForm typeOfItem={typeOfItem} />)}
       {(typeOfItem === 'shirt' && <ItemForm typeOfItem={typeOfItem} />)}
       {(typeOfItem === 'sweater' && <ItemForm typeOfItem={typeOfItem} />)}
