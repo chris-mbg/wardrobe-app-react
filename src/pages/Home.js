@@ -4,7 +4,7 @@ import Wardrobe from "../components/Wardrobe"
 const Home = () => {
   return (
     <div className="home">
-      <h1>GUNNARS GARDEROB</h1>
+      <h1>My wardrobe</h1>
       <OutfitPicker />
       <Wardrobe />
     </div>

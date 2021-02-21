@@ -1,7 +1,10 @@
-.addItem{
+.addItem {
   text-align: center;
 }
-.addItem select {
+.addItem h2 {
+  margin: 3rem;
+}
+.select {
   margin: 1rem;
   padding: 0.5rem;
   background-color: #ddd;
@@ -11,18 +14,16 @@
   border: 1px solid #7f8084;
   width: 50%;
 }
+.select:focus {
+  outline-color: #262526;
+}
 .feedback{
-  background-color: #afb2b7;
-  border-radius: 5px;
-  width: 60%;
-  padding: 1rem;
   margin: 1rem auto;
 }
-
-
-
-/* #262526 black
-#7f8084
-#afb2b7
-#d7d8da
-#f3f3f3 white */
+.feedback p {
+  display: inline-block;
+  margin: 0;
+  background-color: #afb2b7;
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+}

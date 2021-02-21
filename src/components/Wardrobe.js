@@ -20,7 +20,7 @@ const Wardrobe = () => {
 
   return (
     <div className={styles.wardrobe}>
-      <h2>Wardrobe</h2>
+      <h2>Clothes</h2>
       <div className={styles.wardrobeContainer}>
         <div className={styles.tabs}>
           <div className={`${styles.tab}  ${itemToShow === 'tShirt' ? styles.active : ""}`} onClick={() => setItemToShow('tShirt')}>

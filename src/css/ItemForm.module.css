@@ -8,19 +8,15 @@
   margin: 0.5rem;
   padding: 0.5rem;
   background-color: #ddd;
-  color: #062e60;
+  color: #262526;
   font-size: 1.3rem;
   border-radius: 5px;
-  border: 1px solid #07437D;
+  border: 1px solid #7f8084;
   width: 50%;
+}
+.itemForm input:focus {
+  outline-color: #262526;
 }
 .itemForm label {
   font-size: 1.4rem;
 }
-
-
-/* #262526 black
-#7f8084
-#afb2b7
-#d7d8da
-#f3f3f3 white */
