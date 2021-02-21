@@ -2,6 +2,7 @@ import { ClothesContext } from '../contexts/ClothesContext'
 import { useContext, useState, useEffect } from 'react'
 import styles from '../css/OutfitPicker.module.css'
 import OutfitDisplay from './OutfitDisplay'
+import { v4 as uuidv4} from 'uuid'
 
 const OutfitPicker = () => {
   const { clothes } = useContext(ClothesContext);
@@ -77,7 +78,7 @@ const OutfitPicker = () => {
       someOutfit.push(getRandomItem(accessories));
     }
     console.log(someOutfit);
-    setRandomOutfit([...someOutfit, {timestamp: new Date().getTime()}]);
+    setRandomOutfit([...someOutfit, {timestamp: new Date().getTime(), id: uuidv4()}]);
   }
 
   useEffect( () => {

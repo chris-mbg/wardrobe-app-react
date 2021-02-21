@@ -50,6 +50,7 @@
   background-color: #afb2b7;
   border: 1px solid #7f8084;
   border-left: none;
+  border-radius: 0 5px 5px 0;
 }
 
 @media only screen and (min-width: 780px) {
