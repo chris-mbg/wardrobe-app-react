@@ -11,8 +11,7 @@ const AddItem = () => {
 
   return (
     <div className={styles.addItem}>
-      <h1>Changes?</h1>
-      <h2>Add a new item to your wardrobe here!</h2>
+      <h2>Add a new item <br /> to your wardrobe...</h2>
       <select className={styles.select} onChange={handleTypeChange}>
         <option value="">Type of item</option>
         <option value="tShirt">T-shirt</option>
