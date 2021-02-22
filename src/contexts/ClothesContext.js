@@ -24,10 +24,24 @@ const ClothesContextProvider = (props) => {
           id: uuidv4()
         },
         {
+          type: 'sweater',
+          brand: 'Gant',
+          color: 'Dark purple',
+          description: 'Fine knitted jumper',
+          id: uuidv4()
+        },
+        {
           type: 'shirt',
           brand: 'Dressman',
           color: 'Green/checked',
-          description: 'Longsleeved',
+          description: 'Everyday/longsleeved',
+          id: uuidv4()
+        },
+        {
+          type: 'shirt',
+          brand: 'Brothers',
+          color: 'Red/blue/checked',
+          description: 'Shortsleeved summer shirt',
           id: uuidv4()
         },
         {
@@ -52,6 +66,13 @@ const ClothesContextProvider = (props) => {
           id: uuidv4()
         },
         {
+          type: 'tShirt',
+          brand: 'Uniqlo',
+          color: 'Lighter blue',
+          description: 'Longsleeved t-shirt',
+          id: uuidv4()
+        },
+        {
           type: 'shoes',
           brand: 'Ecco',
           color: 'Black',
@@ -73,6 +94,13 @@ const ClothesContextProvider = (props) => {
           id: uuidv4()
         },
         {
+          type: 'shoes',
+          brand: 'Salomon',
+          color: 'Black/grey',
+          description: 'Walking shoes',
+          id: uuidv4()
+        },
+        {
           type: 'trousers',
           color: 'Indigo',
           brand: 'Tiger',
@@ -87,10 +115,24 @@ const ClothesContextProvider = (props) => {
           id: uuidv4()
         },
         {
+          type: 'shorts',
+          color: 'Red',
+          brand: 'H&M',
+          description: 'Shorts',
+          id: uuidv4()
+        },
+        {
           type: 'trousers',
           color: 'Grey',
           brand: 'H&M',
           description: 'Chinos',
+          id: uuidv4()
+        },
+        {
+          type: 'trousers',
+          color: 'Black',
+          brand: 'Nudie',
+          description: 'Jeans',
           id: uuidv4()
         },
         {
@@ -108,6 +150,13 @@ const ClothesContextProvider = (props) => {
           id: uuidv4()
         },
         {
+          type: 'jacket',
+          color: 'Dark blue',
+          brand: 'Tiger',
+          description: 'Blazer',
+          id: uuidv4()
+        },
+        {
           type: 'accessory',
           color: 'Black',
           brand: 'Unknown',
@@ -119,6 +168,13 @@ const ClothesContextProvider = (props) => {
           color: 'Grey',
           brand: 'Hestra',
           description: 'Mittens',
+          id: uuidv4()
+        },
+        {
+          type: 'accessory',
+          color: 'Black',
+          brand: 'Weekday',
+          description: 'Cap',
           id: uuidv4()
         }
       ];
