@@ -7,7 +7,7 @@ import Home from './pages/Home'
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename="/react-wardrobe-app">
+      <BrowserRouter basename="/">
         <Navbar />
           <ClothesContextProvider>
             <Route exact path="/">
